@@ -16,7 +16,7 @@ def main():
     # Determina o resultado do jogo
     result = determine_winner(user_choice, computer_choice)
 
-     if "perdeu" in result.lower():
+    if "perdeu" in result.lower():
             st.markdown("<p style='color:red; font-size:20px;'>Você perdeu!</p>", unsafe_allow_html=True)
     if "ganhou" in result.lower():
             st.balloons()
