@@ -10,7 +10,7 @@ user_input = st.sidebar.text_input("Digite seu nome")
 st.write("Paciente:", user_input)
 
 
-df = pd.read_csv("diabetes.csv")
+df = pd.read_csv("diabetes.csv", delimiter=',')
 
 #dados de entrada
 x = df.drop(['Outcome'],1)
