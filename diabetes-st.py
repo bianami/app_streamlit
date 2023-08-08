@@ -1,7 +1,7 @@
 #importando as bibliotecas
 import pandas as pd
 import streamlit as st
-from sklearn.metrics import accuracy_score
+#from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
 
 st.write("Prevendo Diabetes")
@@ -56,13 +56,13 @@ graf = st.bar_chart(user_input_variables)
 dtc = DecisionTreeClassifier(criterion='entropy', max_depth=3)
 
 dtc.fit(x_train, y_train)
-
+'''
 #acurácia do modelo
 
 st.subheader('Acurácia do modelo')
 
 st.write(accuracy_score(y_test, dtc.predict(x_text))*100) #deixar como porcentagem
-
+'''
 #previsão do resultado
 
 prediction = dtc.predict(user_input_variables)
