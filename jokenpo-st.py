@@ -4,19 +4,28 @@ import random
 def main():
     st.title("Jogo de Pedra, Papel e Tesoura")
     
-    options = ["pedra", "papel", "tesoura"]
+    user_choice = None
     
-    # Exibe as opções de escolha para o usuário
-    user_choice = st.selectbox("Escolha sua jogada:", options)
-    st.write(f"Você escolheu: {user_choice}")
+    st.write("Escolha uma opção:")
     
-    # Gera uma escolha aleatória para o computador
-    computer_choice = random.choice(options)
-    st.write(f"Computador escolheu: {computer_choice}")
+    # Criação dos botões
+    col1, col2, col3 = st.beta_columns(3)
+    with col1:
+        if st.button("Pedra"):
+            user_choice = "pedra"
+    with col2:
+        if st.button("Papel"):
+            user_choice = "papel"
+    with col3:
+        if st.button("Tesoura"):
+            user_choice = "tesoura"
     
-    # Determina o resultado do jogo
-    result = determine_winner(user_choice, computer_choice)
-    st.write(result)
+    if user_choice:
+        computer_choice = random.choice(["pedra", "papel", "tesoura"])
+        result = determine_winner(user_choice, computer_choice)
+        st.write(f"Você escolheu: {user_choice.capitalize()}")
+        st.write(f"Computador escolheu: {computer_choice.capitalize()}")
+        st.write(result)
 
 def determine_winner(user_choice, computer_choice):
     if user_choice == computer_choice:
@@ -30,3 +39,11 @@ def determine_winner(user_choice, computer_choice):
     
 if __name__ == "__main__":
     main()
+Neste exemplo, usamos a função st.button() para criar os botões "Pedra", "Papel" e "Tesoura". Quando o usuário clica em um dos botões, a escolha do usuário é registrada, e então o computador faz sua escolha aleatória. Em seguida, o resultado do jogo é determinado usando a função determine_winner().
+
+Lembre-se de que você pode estilizar e personalizar ainda mais o layout e a aparência dos botões, se desejar.
+
+
+
+
+
