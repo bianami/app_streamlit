@@ -2,3 +2,5 @@ pandas
 streamlit
 matplotlib
 scikit-learn
+random2==1.0.1
+Pillow==8.2.0
