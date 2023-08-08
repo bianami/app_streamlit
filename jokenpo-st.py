@@ -39,9 +39,7 @@ def determine_winner(user_choice, computer_choice):
     
 if __name__ == "__main__":
     main()
-Neste exemplo, usamos a função st.button() para criar os botões "Pedra", "Papel" e "Tesoura". Quando o usuário clica em um dos botões, a escolha do usuário é registrada, e então o computador faz sua escolha aleatória. Em seguida, o resultado do jogo é determinado usando a função determine_winner().
 
-Lembre-se de que você pode estilizar e personalizar ainda mais o layout e a aparência dos botões, se desejar.
 
 
 
