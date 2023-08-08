@@ -3,6 +3,7 @@ import pandas as pd
 import streamlit as st
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
 
 df = pd.read_csv("diabetes.csv")
 
