@@ -4,7 +4,9 @@ import random
 def main():
     st.title("Jogo de Pedra, Papel e Tesoura")
 
-    user_choice = st.radio("Escolha sua jogada:", ["pedra", "papel", "tesoura"])
+    options = ["pedra", "papel", "tesoura"]
+    
+    user_choice = st.radio("Escolha sua jogada:", options)
     st.write(f"Você escolheu: {user_choice}")
     
     # Gera uma escolha aleatória para o computador
@@ -13,33 +15,11 @@ def main():
     
     # Determina o resultado do jogo
     result = determine_winner(user_choice, computer_choice)
-
-    st.title("Animação de Texto no Streamlit")
-    
+    if "ganhou" in result.lower():
+            st.balloons()
+        
     st.write(resultado)
-    
-    # Use HTML para criar a animação de texto
-    st.markdown(
-        <div class="animation">
-            <h2>Texto Animado</h2>
-        </div>
-        <style>
-            .animation h2 {
-                animation: slideIn 3s ease infinite;
-            }
-            
-            @keyframes slideIn {
-                0% {
-                    transform: translateX(-100%);
-                    opacity: 0;
-                }
-                100% {
-                    transform: translateX(0);
-                    opacity: 1;
-                }
-            }
-        </style>
-    )
+
 
 def determine_winner(user_choice, computer_choice):
     if user_choice == computer_choice:
