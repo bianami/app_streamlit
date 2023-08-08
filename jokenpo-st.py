@@ -3,8 +3,6 @@ import random
 
 def main():
     st.title("Jogo de Pedra, Papel e Tesoura")
-    
-    options = 
 
     user_choice = st.radio("Escolha sua jogada:", ["pedra", "papel", "tesoura"])
     st.write(f"Você escolheu: {user_choice}")
