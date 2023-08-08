@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 df = pd.read_csv("diabetes.csv")
 
 #dados de entrada
-x = df.drop(['Outcome'],1)
+#x = df.drop(['Outcome'],1)
 
 y = df['Outcome']
 
