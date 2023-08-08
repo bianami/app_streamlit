@@ -4,13 +4,7 @@ import streamlit as st
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
 
-st.write("Prevendo Diabetes")
-st.subheader("Informações dos dados")
-user_input = st.sidebar.text_input("Digite seu nome")
-st.write("Paciente:", user_input)
-
-
-df = pd.read_csv("diabetes.csv", delimiter=',')
+df = pd.read_csv("diabetes.csv")
 
 #dados de entrada
 x = df.drop(['Outcome'],1)
@@ -21,6 +15,12 @@ y = df['Outcome']
 x_train, x_text, y_train, y_test = train_test_split(x, y, test_size=0.2)
 
 #dados dos usuários com a função
+
+st.write("Prevendo Diabetes")
+st.subheader("Informações dos dados")
+user_input = st.sidebar.text_input("Digite seu nome")
+st.write("Paciente:", user_input)
+
 def get_user_date():
 
   pregnancies = st.sidebar.slider("Gravidez",0, 15, 1)
