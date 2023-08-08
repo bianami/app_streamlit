@@ -18,7 +18,7 @@ def main():
     if "ganhou" in result.lower():
             st.balloons()
         
-    st.write(resultado)
+    st.write(result)
 
 
 def determine_winner(user_choice, computer_choice):
