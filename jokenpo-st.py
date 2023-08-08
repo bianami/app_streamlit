@@ -4,28 +4,44 @@ import random
 def main():
     st.title("Jogo de Pedra, Papel e Tesoura")
     
-    user_choice = None
+    options = 
+
+    user_choice = st.radio("Escolha sua jogada:", ["pedra", "papel", "tesoura"])
+    st.write(f"Você escolheu: {user_choice}")
     
-    st.write("Escolha uma opção:")
+    # Gera uma escolha aleatória para o computador
+    computer_choice = random.choice(options)
+    st.write(f"Computador escolheu: {computer_choice}")
     
-    # Criação dos botões
-    col1, col2, col3 = st.beta_columns(3)
-    with col1:
-        if st.button("Pedra"):
-            user_choice = "pedra"
-    with col2:
-        if st.button("Papel"):
-            user_choice = "papel"
-    with col3:
-        if st.button("Tesoura"):
-            user_choice = "tesoura"
+    # Determina o resultado do jogo
+    result = determine_winner(user_choice, computer_choice)
+
+    st.title("Animação de Texto no Streamlit")
     
-    if user_choice:
-        computer_choice = random.choice(["pedra", "papel", "tesoura"])
-        result = determine_winner(user_choice, computer_choice)
-        st.write(f"Você escolheu: {user_choice.capitalize()}")
-        st.write(f"Computador escolheu: {computer_choice.capitalize()}")
-        st.write(result)
+    st.write(resultado)
+    
+    # Use HTML para criar a animação de texto
+    st.markdown(
+        <div class="animation">
+            <h2>Texto Animado</h2>
+        </div>
+        <style>
+            .animation h2 {
+                animation: slideIn 3s ease infinite;
+            }
+            
+            @keyframes slideIn {
+                0% {
+                    transform: translateX(-100%);
+                    opacity: 0;
+                }
+                100% {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+        </style>
+    )
 
 def determine_winner(user_choice, computer_choice):
     if user_choice == computer_choice:
@@ -39,9 +55,3 @@ def determine_winner(user_choice, computer_choice):
     
 if __name__ == "__main__":
     main()
-
-
-
-
-
-
