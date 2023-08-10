@@ -20,7 +20,7 @@ def main():
     result = determine_winner(user_choice, computer_choice)
 
     if "perdeu" in result.lower():
-            st.markdown("<p style='color:red; style=text-align: center; font-size:20px;'>Você perdeu!</p>", unsafe_allow_html=True)
+            st.markdown("<p style='color:red; text-align: center; font-size:20px;'>Você perdeu!</p>", unsafe_allow_html=True)
     if "ganhou" in result.lower():
             st.balloons()
             st.write(result)
