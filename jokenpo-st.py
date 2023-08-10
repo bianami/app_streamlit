@@ -1,9 +1,12 @@
+# importação das bibliotecas necessárias
 import streamlit as st
 import random
 
-def main():
-    st.title("Jogo de Pedra, Papel e Tesoura")
 
+def main():
+    
+    st.title("Jogo de Pedra, Papel e Tesoura")
+    
     options = ["pedra", "papel", "tesoura"]
     
     user_choice = st.radio("Escolha sua jogada:", options)
@@ -24,8 +27,6 @@ def main():
     else:
             st.write(result)
         
-    
-
 
 def determine_winner(user_choice, computer_choice):
     if user_choice == computer_choice:
