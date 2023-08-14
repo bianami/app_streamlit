@@ -29,6 +29,7 @@ def main():
         selected_option = st.radio("Escolha a sua resposta:", question_data["options"])
         
         if st.button("Próxima Pergunta"):
+            print('ola')
             if selected_option == question_data["options"][question_data["correct_index"]]:
                 score += 1
 
