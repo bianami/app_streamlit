@@ -29,10 +29,12 @@ def main():
         answer = st.radio("Escolha a resposta:", q['options'])
         if answer == q['correct_answer']:
             score += 1
-            st.write("Resposta correta!")
-        else:
-            st.write("Resposta incorreta.")
     
+    if st.button("Ver Placar Final"):
+        show_score(score, total_questions)
+
+def show_score(score, total_questions):
+    st.title("Placar Final")
     st.write(f"Seu placar final: {score}/{total_questions}")
 
 if __name__ == "__main__":
