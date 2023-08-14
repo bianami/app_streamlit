@@ -32,9 +32,6 @@ def main():
             st.write("Resposta correta!")
         else:
             st.write("Resposta incorreta.")
-        
-        if i < total_questions - 1:
-            st.button("Próxima Pergunta")
     
     st.write(f"Seu placar final: {score}/{total_questions}")
 
