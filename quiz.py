@@ -32,14 +32,13 @@ def main():
     
     if selected_page == "Página 1":
         answer1 = page1()
-        if st.button("Próxima Pergunta"):
-            selected_page = "Página 2"
+        st.sidebar.write("Resposta Pergunta 1:", answer1)
     elif selected_page == "Página 2":
         answer2 = page2()
-        if st.button("Próxima Pergunta"):
-            selected_page = "Página 3"
+        st.sidebar.write("Resposta Pergunta 2:", answer2)
     elif selected_page == "Página 3":
         answer3 = page3()
+        st.sidebar.write("Resposta Pergunta 3:", answer3)
     
     if st.sidebar.button("Mostrar Resultado"):
         st.write("Resultado Final:")
