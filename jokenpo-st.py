@@ -5,7 +5,7 @@ import random
 
 def main():
     
-    st.title("Jogo de Pedra, Papel e Tesoura")
+    st.title("Jogo de Jokenpô")
     
     options = ["pedra", "papel", "tesoura"]
     
@@ -20,7 +20,7 @@ def main():
     result = determine_winner(user_choice, computer_choice)
 
     if "perdeu" in result.lower():
-            st.markdown("<p style='color:red; text-align: center; font-size:20px;'>Você perdeu!</p>", unsafe_allow_html=True)
+            st.markdown("<p style='color:red; text-align: center; font-size:18px;'>Você perdeu!</p>", unsafe_allow_html=True)
     if "ganhou" in result.lower():
             st.balloons()
             st.write(result, text_align='center')
@@ -36,7 +36,7 @@ def determine_winner(user_choice, computer_choice):
          (user_choice == "tesoura" and computer_choice == "papel"):
         return "Você ganhou!"
     else:
-        return "Você perdeu!"
+        return ""
     
 if __name__ == "__main__":
     main()
